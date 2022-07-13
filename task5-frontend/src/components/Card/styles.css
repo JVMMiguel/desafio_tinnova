@@ -1,0 +1,85 @@
+.vehicle-card {
+  background-color: #283142;
+  border-radius: 10px;
+  padding: 30px 10px;
+}
+
+.vehicle-title {
+  display: flex;
+  color: #FFF;
+  font-size: 24px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.vehicle-table thead {
+  height: 55px;
+  font-size: 16px;
+  color: #e9e9e9;
+  font-weight: 700;
+}
+
+.vehicle-table tbody {
+  font-size: 14px;
+  font-weight: 400;
+  color: #cfcfcf;
+  text-align: center;
+}
+
+.vehicle-table tbody tr {
+  height: 74px;
+  border-top: 1px solid #5f6e82;
+}
+
+.vehicle-table tbody tr:hover > td {
+  background-color: #384459;
+}
+
+.vehicle-table tbody tr:nth-child(odd) {
+  background-color: #242c3b;
+}
+
+.show576 {
+    display: none;
+}
+
+.show992 {
+    display: none;
+}
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .show576 {
+        display: table-cell;
+    }
+
+    .vehicle-card {
+        padding: 35px;
+    }
+
+    .vehicle-table tbody tr {
+        height: 55px;
+    }
+
+    .vehicle-table tbody {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    .show992 {
+        display: table-cell;
+    }
+}
