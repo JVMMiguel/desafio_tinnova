@@ -26,35 +26,35 @@ export function VehicleByBrand() {
       <main>
         <section id="vehicles">
           <div className="vehicle-container">
-          <div className="vehicle-card">
-      <h2 className="vehicle-title">Veículos por Fabricante</h2>
-      <div>
-        <table className="vehicle-table">
-          <thead>
-            <tr>
-              <th className="show576">Marca</th>
-              <th className="show576">Quantidade</th>
-            </tr>
-          </thead>
-          {
-            vehicle ?
-              vehicle?.map(vehicle => (
-                <tbody key={vehicle?.id}>
-                  <tr>
-                    <td className="576">{vehicle?.brand.replace("_", " ")}</td>
-                    <td className="show576">{vehicle?.quantity}</td>
-                  </tr>
-                </tbody>
-              ))
-              :
-              <div className="not-found">
-                Nenhum dado encontrado
+            <div className="vehicle-card">
+              <h2 className="vehicle-title">Veículos por Fabricante</h2>
+              <div>
+                <table className="vehicle-table">
+                  <thead>
+                    <tr>
+                      <th className="show576">Marca</th>
+                      <th className="show576">Quantidade</th>
+                    </tr>
+                  </thead>
+                  {
+                    vehicle ?
+                      vehicle?.map(vehicle => (
+                        <tbody key={vehicle?.id}>
+                          <tr>
+                            <td className="576">{vehicle?.brand.replace("_", " ")}</td>
+                            <td className="show576">{vehicle?.quantity}</td>
+                          </tr>
+                        </tbody>
+                      ))
+                      :
+                      <div className="not-found">
+                        Nenhum dado encontrado
+                      </div>
+                  }
+                </table>
               </div>
-          }
-        </table>
-      </div>
 
-    </div>
+            </div>
           </div>
         </section>
       </main>
