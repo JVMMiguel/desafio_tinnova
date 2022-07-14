@@ -137,4 +137,4 @@ Após isso, podemos seguir para o clone e execução da Aplicação!
 
 ---
 
-<p align="center">Desenvolvido por - [João Vittor](https://www.linkedin.com/in/joaovittormmiguel/)</p>
+<p align="center">Desenvolvido por - <a href="https://www.linkedin.com/in/joaovittormmiguel/">João Vittor</a></p>
