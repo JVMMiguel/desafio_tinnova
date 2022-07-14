@@ -135,4 +135,4 @@ Após isso, podemos seguir para o clone e execução da Aplicação!
 
 ![Alt Text](toreadme/Homepage.jpg)
 
-Desenvolvido por <a href="https://www.linkedin.com/in/joaovittormmiguel/" align="center">João Vittor</a>
+<p align="center">Desenvolvido por <a href="https://www.linkedin.com/in/joaovittormmiguel/">João Vittor</a></p>
