@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
+import { format } from 'date-fns'
 
 interface vehicleData {
   id: number | string;
@@ -54,7 +55,7 @@ export function VehicleRegisteredLastWeek() {
                               <td className="show576">{vehicle?.description}</td>
                               <td className="show992">{vehicle?.sold === true ? "Sim" : "Não"}</td>
                               <td className="show992">{vehicle?.vehicleName}</td>
-                              <td >{vehicle?.year}</td>
+                              <td>{vehicle?.year}</td>
                             </tr>
                           </tbody>
                         ))

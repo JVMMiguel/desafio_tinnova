@@ -1,8 +1,10 @@
 import { Button } from '@material-ui/core';
+import { Toast } from 'react-toastify/dist/components';
 import DeleteIcon from '@material-ui/icons/Delete'
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
 import './styles.css'
+import { toast } from 'react-toastify';
 
 interface vehicleData {
   id: number | string;
@@ -22,9 +24,15 @@ export function Card() {
     setVehicle(data)
   }
 
-  const handleDelete = async(vehicleId: any) => {
-    console.log(vehicleId)
-  } 
+  async function handleDelete(vehicleId: string | number) {
+    try {
+      await api.delete(`veiculos/${vehicleId}`)
+      setVehicle(old => old?.filter(item => item.id !== vehicleId))
+      toast.success('Veículo deletado')
+    } catch {
+      toast.error('Veículo não deletado')
+    }
+  }
 
   useEffect(() => {
     handleVehicle()
@@ -57,7 +65,7 @@ export function Card() {
                     <td className="show992">{vehicle?.sold === true ? "Sim" : "Não"}</td>
                     <td className="show992">{vehicle?.vehicleName}</td>
                     <td >{vehicle?.year}</td>
-                    <td><Button onClick={() => {handleDelete}} variant="contained" startIcon={<DeleteIcon />}/></td>
+                    <td><Button onClick={() => handleDelete(vehicle.id)} variant="contained" startIcon={<DeleteIcon />}/></td>
                   </tr>
                 </tbody>
               ))

@@ -5,17 +5,20 @@ export function Header() {
   return (
     <header>
       <div className="vehicle-logo-container">
-        <h1>Tinnova Test - Veículos</h1>
+        <h1>Tinnova Test - Listagem de Veículos</h1>
         <nav>
           <ul>
             <Link to="/">
-              <li>Lista todos veículos</li>
+              <li>Todos veículos</li>
             </Link>
             <Link to="/vehicle-by-brand">
-              <li>Lista veículos por Fabricante</li>
+              <li>Por Fabricante</li>
             </Link>
             <Link to="/weekly-register">
-              <li>Lista veículos registrados na última semana</li>
+              <li>Registrados na última semana</li>
+            </Link>
+            <Link to="/not-sold">
+              <li>Não vendidos</li>
             </Link>
           </ul>
         </nav>

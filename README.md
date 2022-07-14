@@ -27,6 +27,10 @@
 <br />
 
 ![Alt Text](toreadme/Ve%C3%ADculos%20ultimos%207%20dias.jpg)
+
+<br />
+
+![Alt Text](toreadme/Ve%C3%ADculos%20n%C3%A3o%20vendidos.jpg)
 ## 🔧 Instruções para executar a Aplicação localmente
 
 <p>Primeiramente você precisa ter configurado e instalado na sua máquina o Java JDK 8 (ou OpenJDK), Maven, Node.js, PostgreSQL (e um gerenciador de banco de dados, como o pgAdmin 4), Spring Tool Suite e o VS Code.</p>
@@ -72,7 +76,7 @@ Após isso, podemos seguir para o clone e execução da Aplicação!
 6º - Após a criação da base de dados, verificar o arquivo application.properties que se encontra na pasta "task5-api\src\main\resources" e alterar as configurações de usuário e senha do Postgres conforme configurados durante instalação na sua máquina. As linhas que devem ser alteradas são: 
 
 ```bash
-  spring.datasource.url=jdbc:postgresql://localhost:5432/veiculo (aqui deve ser passado o local de instalação do seu banco de dados)
+  spring.datasource.url=jdbc:postgresql://localhost:5432/veiculo?currentSchema=public (aqui deve ser passado o local de instalação do seu banco de dados, entre as :// e a ?)
   spring.datasource.username=postgres (aqui deve ser passado o usuário do seu banco de dados)
   spring.datasource.password=postgres (aqui deve ser passado a senha do seu banco de dados)
 ```
@@ -97,7 +101,7 @@ Após isso, podemos seguir para o clone e execução da Aplicação!
 
 ![Alt Text](toreadme/Swagger.jpg)
 
-** Nota: junto com o arquivo "vehicles_endpoints.json" foi disponibilizado também um arquivo "script_vehicles.sql" no qual contém alguns registros de veículos para que possam ser inseridos via "Query tool" para os testes iniciais da aplicação.
+** Nota: a aplicação já conta com a integração do Flyway e na pasta task5-api\src\main\resources\db\migration temos um arquivo de nome V1__CREATE_VEHICLES.sql que já faz a inserção de alguns registros na tabela que foi criada, para haver registros e assim testar os endpoints.
 
 9º - Após a API estar iniciada e funcional, podemos iniciar o Frontend da aplicação. Acesse a pasta com o repositório do projeto e faça a importação da pasta "task5-frontend" no VS Code. Após feito a importação do projeto abra um terminal do VS Code e execute o seguinte comando para baixar as dependências do Frontend: 
 
