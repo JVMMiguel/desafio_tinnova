@@ -83,3 +83,40 @@
         display: table-cell;
     }
 }
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_group label {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFF;
+}
+
+.form_group input, select{
+  border: 1px solid #AAAAAA;
+  border-radius: 8px;
+  background-color: #fff;
+  height: 36px;
+  padding: 0 10px;
+  width: 60%;
+}
+
+.form_group button {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 16px;
+}

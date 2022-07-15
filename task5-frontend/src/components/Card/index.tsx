@@ -19,10 +19,11 @@ export function Card() {
 
   const [vehicle, setVehicle] = useState<vehicleData[]>()
 
-  async function handleVehicle() {
-    const { data } = await api.get('veiculos');
-    setVehicle(data)
-  }
+  useEffect(() => {
+    api.get('veiculos/')
+      .then(response => setVehicle(response.data))
+      .catch(() => console.log('Não retornou nada'))
+  }, [])
 
   async function handleDelete(vehicleId: string | number) {
     try {
@@ -34,10 +35,6 @@ export function Card() {
     }
   }
 
-  useEffect(() => {
-    handleVehicle()
-  }, [])
-  
   return (
     <div className="vehicle-card">
       <h2 className="vehicle-title">Veículos</h2>
@@ -65,7 +62,7 @@ export function Card() {
                     <td className="show992">{vehicle?.sold === true ? "Sim" : "Não"}</td>
                     <td className="show992">{vehicle?.vehicleName}</td>
                     <td >{vehicle?.year}</td>
-                    <td><Button onClick={() => handleDelete(vehicle.id)} variant="contained" startIcon={<DeleteIcon />}/></td>
+                    <td><Button onClick={() => handleDelete(vehicle.id)} variant="contained" startIcon={<DeleteIcon />} /></td>
                   </tr>
                 </tbody>
               ))

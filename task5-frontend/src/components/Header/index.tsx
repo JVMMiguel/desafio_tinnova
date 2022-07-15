@@ -8,6 +8,9 @@ export function Header() {
         <h1>Tinnova Test - Listagem de Veículos</h1>
         <nav>
           <ul>
+            <Link to="/register-vehicle">
+              <li>Registrar veículo</li>
+            </Link>
             <Link to="/">
               <li>Todos veículos</li>
             </Link>

@@ -7,13 +7,10 @@ export function VehiclesNotSold() {
 
   const [vehicle, setVehicle] = useState<[]>()
 
-  async function handleVehicle() {
-    const { data } = await api.get('veiculos/find/not-sold');
-    setVehicle(data)
-  }
-
   useEffect(() => {
-    handleVehicle()
+    api.get('veiculos/find/not-sold')
+      .then(response => setVehicle(response.data))
+      .catch(() => console.log('Não retornou nada'))
   }, [])
 
   return (

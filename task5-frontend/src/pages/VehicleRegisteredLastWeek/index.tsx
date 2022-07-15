@@ -16,13 +16,10 @@ export function VehicleRegisteredLastWeek() {
 
   const [vehicle, setVehicle] = useState<vehicleData[]>()
 
-  async function handleVehicle() {
-    const { data } = await api.get('veiculos/find/weekly-register');
-    setVehicle(data)
-  }
-
   useEffect(() => {
-    handleVehicle()
+    api.get('veiculos/find/weekly-register')
+      .then(response => setVehicle(response.data))
+      .catch(() => console.log('Não retornou nada'))
   }, [])
 
   return (
@@ -33,41 +30,41 @@ export function VehicleRegisteredLastWeek() {
           <div className="vehicle-container">
             <div className="vehicle-card">
               <h2 className="vehicle-title">Veículos registrados últimos 7 dias</h2>
-                <div>
-                  <table className="vehicle-table">
-                    <thead>
-                      <tr>
-                        <th className="show992">ID</th>
-                        <th>Marca</th>
-                        <th className="show576">Descrição</th>
-                        <th className="show992">Vendido</th>
-                        <th className="show992">Nome do Veículo</th>
-                        <th>Ano</th>
-                      </tr>
-                    </thead>
-                    {
-                      vehicle ?
-                        vehicle?.map(vehicle => (
-                          <tbody key={vehicle?.id}>
-                            <tr>
-                              <td className="show992">{vehicle?.id}</td>
-                              <td>{vehicle?.brand.replace("_", " ")}</td>
-                              <td className="show576">{vehicle?.description}</td>
-                              <td className="show992">{vehicle?.sold === true ? "Sim" : "Não"}</td>
-                              <td className="show992">{vehicle?.vehicleName}</td>
-                              <td>{vehicle?.year}</td>
-                            </tr>
-                          </tbody>
-                        ))
-                        :
-                        <div className="not-found">
-                          Nenhum dado encontrado
-                        </div>
-                    }
-                  </table>
-                </div>
+              <div>
+                <table className="vehicle-table">
+                  <thead>
+                    <tr>
+                      <th className="show992">ID</th>
+                      <th>Marca</th>
+                      <th className="show576">Descrição</th>
+                      <th className="show992">Vendido</th>
+                      <th className="show992">Nome do Veículo</th>
+                      <th>Ano</th>
+                    </tr>
+                  </thead>
+                  {
+                    vehicle ?
+                      vehicle?.map(vehicle => (
+                        <tbody key={vehicle?.id}>
+                          <tr>
+                            <td className="show992">{vehicle?.id}</td>
+                            <td>{vehicle?.brand.replace("_", " ")}</td>
+                            <td className="show576">{vehicle?.description}</td>
+                            <td className="show992">{vehicle?.sold === true ? "Sim" : "Não"}</td>
+                            <td className="show992">{vehicle?.vehicleName}</td>
+                            <td>{vehicle?.year}</td>
+                          </tr>
+                        </tbody>
+                      ))
+                      :
+                      <div className="not-found">
+                        Nenhum dado encontrado
+                      </div>
+                  }
+                </table>
               </div>
             </div>
+          </div>
         </section>
       </main>
     </>

@@ -12,14 +12,12 @@ export function VehicleByBrand() {
 
   const [vehicle, setVehicle] = useState<vehicleData[]>()
 
-  async function handleVehicle() {
-    const { data } = await api.get('veiculos/find/brand');
-    setVehicle(data)
-  }
-
   useEffect(() => {
-    handleVehicle()
+    api.get('veiculos/find/brand')
+      .then(response => setVehicle(response.data))
+      .catch(() => console.log('Não retornou nada'))
   }, [])
+
   return (
     <>
       <Header />
