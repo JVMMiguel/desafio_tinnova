@@ -4,7 +4,7 @@ import './styles.css'
 export function Header() {
   return (
     <header>
-      <div className="vehicle-logo-container">
+      <div className="vehicle-header-container">
         <h1>Tinnova Test - Listagem de Veículos</h1>
         <nav>
           <ul>

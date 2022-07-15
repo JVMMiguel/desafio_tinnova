@@ -100,7 +100,7 @@
   color: #FFF;
 }
 
-.form_group input, select{
+.form_group input, select {
   border: 1px solid #AAAAAA;
   border-radius: 8px;
   background-color: #fff;
@@ -112,7 +112,6 @@
 .form_group button {
   margin-top: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 200px;
