@@ -4,7 +4,7 @@ import { api } from "../../services/api";
 import { format } from 'date-fns'
 import { toast } from "react-toastify";
 
-interface vehicleData {
+interface VehicleData {
   id: number | string;
   brand: string;
   description: string;
@@ -15,7 +15,7 @@ interface vehicleData {
 
 export function VehicleRegisteredLastWeek() {
 
-  const [vehicle, setVehicle] = useState<vehicleData[]>()
+  const [vehicle, setVehicle] = useState<VehicleData[]>()
 
   useEffect(() => {
     api.get('veiculos/find/weekly-register')

@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
 
-interface vehicleData {
+interface VehicleData {
   id: number | string;
   brand: string;
   quantity: number;
@@ -11,7 +11,7 @@ interface vehicleData {
 
 export function VehicleByBrand() {
 
-  const [vehicle, setVehicle] = useState<vehicleData[]>()
+  const [vehicle, setVehicle] = useState<VehicleData[]>()
 
   useEffect(() => {
     api.get('veiculos/find/brand')

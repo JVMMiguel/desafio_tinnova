@@ -1,12 +1,13 @@
 import { Button } from '@material-ui/core';
-import { Toast } from 'react-toastify/dist/components';
 import DeleteIcon from '@material-ui/icons/Delete'
-import { useEffect, useState } from 'react';
+import { format } from 'date-fns';
+import ptBR from 'date-fns/esm/locale/pt-BR/index.js';
+import { useEffect, useMemo, useState } from 'react';
+import { toast } from 'react-toastify';
 import { api } from '../../services/api';
 import './styles.css'
-import { toast } from 'react-toastify';
 
-interface vehicleData {
+interface VehicleData {
   id: number | string;
   brand: string;
   description: string;
@@ -17,7 +18,7 @@ interface vehicleData {
 
 export function Card() {
 
-  const [vehicle, setVehicle] = useState<vehicleData[]>()
+  const [vehicle, setVehicle] = useState<VehicleData[]>()
 
   useEffect(() => {
     api.get('veiculos/')
@@ -29,12 +30,12 @@ export function Card() {
     try {
       await api.delete(`veiculos/${vehicleId}`)
       setVehicle(old => old?.filter(item => item.id !== vehicleId))
-      toast.success('Veículo deletado')
+      toast.success('Veículo deletado!')
     } catch {
-      toast.error('Veículo não deletado')
+      toast.error('Houve um erro ao deletar o veículo!')
     }
   }
-
+  
   return (
     <div className="vehicle-card">
       <h2 className="vehicle-title">Veículos</h2>
