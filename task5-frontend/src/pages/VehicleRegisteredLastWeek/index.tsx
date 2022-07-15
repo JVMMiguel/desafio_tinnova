@@ -11,6 +11,7 @@ interface VehicleData {
   sold: boolean;
   vehicleName: string;
   year: number | string;
+  createdAt: number;
 }
 
 export function VehicleRegisteredLastWeek() {
@@ -41,6 +42,7 @@ export function VehicleRegisteredLastWeek() {
                       <th className="show992">Vendido</th>
                       <th className="show992">Nome do Veículo</th>
                       <th>Ano</th>
+                      <th>Data Registro</th>
                     </tr>
                   </thead>
                   {
@@ -54,6 +56,7 @@ export function VehicleRegisteredLastWeek() {
                             <td className="show992">{vehicle?.sold === true ? "Sim" : "Não"}</td>
                             <td className="show992">{vehicle?.vehicleName}</td>
                             <td>{vehicle?.year}</td>
+                            <td>{format(vehicle.createdAt, 'dd/MM/yyyy')}</td>
                           </tr>
                         </tbody>
                       ))
