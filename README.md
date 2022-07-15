@@ -31,6 +31,10 @@
 <br />
 
 ![Alt Text](toreadme/Ve%C3%ADculos%20n%C3%A3o%20vendidos.jpg)
+
+<br />
+
+![Alt Text](toreadme/Cadastro%20de%20ve%C3%ADculos.jpg)
 ## 🔧 Instruções para executar a Aplicação localmente
 
 <p>Primeiramente você precisa ter configurado e instalado na sua máquina o Java JDK 8 (ou OpenJDK), Maven, Node.js, PostgreSQL (e um gerenciador de banco de dados, como o pgAdmin 4), Spring Tool Suite e o VS Code.</p>

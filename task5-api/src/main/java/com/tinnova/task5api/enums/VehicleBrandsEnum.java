@@ -10,11 +10,19 @@ public enum VehicleBrandsEnum {
 	FIAT("Fiat"),
 	FORD("Ford"),
 	HONDA("Honda"),
+	HYUNDAI("Hyundai"),
 	JEEP("Jeep"),
 	KIA("Kia"),
+	LAND_ROVER("Land Rover"),
+	MERCEDES_BENZ("Mercedes-Benz"),
+	NISSAN("Nissan"),
+	PEUGEOT("Peugeot"),
 	RENAULT("Renault"),
 	SUZUKI("Suzuki"),
+	TOYOTA("Toyota"),
 	VOLKSWAGEN("Volkswagen"),
+	VOLVO("Volvo"),
+	YAMAHA("Yamaha"),
 	OUTRO("Outro");
 
 	private String brand;
