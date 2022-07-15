@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
 
@@ -15,7 +16,7 @@ export function VehicleByBrand() {
   useEffect(() => {
     api.get('veiculos/find/brand')
       .then(response => setVehicle(response.data))
-      .catch(() => console.log('Não retornou nada'))
+      .catch(() => toast.error('Não foi possível conectar à API!'))
   }, [])
 
   return (

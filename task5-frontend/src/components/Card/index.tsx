@@ -22,7 +22,7 @@ export function Card() {
   useEffect(() => {
     api.get('veiculos/')
       .then(response => setVehicle(response.data))
-      .catch(() => console.log('Não retornou nada'))
+      .catch(() => toast.error('Não foi possível conectar à API!'))
   }, [])
 
   async function handleDelete(vehicleId: string | number) {

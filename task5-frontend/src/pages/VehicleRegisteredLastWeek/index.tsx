@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
 import { format } from 'date-fns'
+import { toast } from "react-toastify";
 
 interface vehicleData {
   id: number | string;
@@ -19,7 +20,7 @@ export function VehicleRegisteredLastWeek() {
   useEffect(() => {
     api.get('veiculos/find/weekly-register')
       .then(response => setVehicle(response.data))
-      .catch(() => console.log('Não retornou nada'))
+      .catch(() => toast.error('Não foi possível conectar à API!'))
   }, [])
 
   return (
